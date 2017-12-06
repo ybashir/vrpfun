@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false&key=AIzaSyD8n-hyKVeAKHx6D4OrsYPxKEF8ultGAmE"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(31.554606, 74.357158);
+		var myOptions = {
+			zoom: 13,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var latlng = new google.maps.LatLng(31.466924, 74.251864);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_0.png');
+		var marker = new google.maps.Marker({
+		label: "0",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.374394, 74.178183);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_1.png');
+		var marker = new google.maps.Marker({
+		label: "1",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.474986, 74.377064);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_2.png');
+		var marker = new google.maps.Marker({
+		label: "2",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.519758, 74.290662);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_3.png');
+		var marker = new google.maps.Marker({
+		label: "3",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.538699, 74.336909);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_4.png');
+		var marker = new google.maps.Marker({
+		label: "4",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.511108, 74.350944);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_5.png');
+		var marker = new google.maps.Marker({
+		label: "5",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.527497, 74.349400);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_6.png');
+		var marker = new google.maps.Marker({
+		label: "6",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.498499, 74.273731);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_7.png');
+		var marker = new google.maps.Marker({
+		label: "7",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.466266, 74.315672);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_8.png');
+		var marker = new google.maps.Marker({
+		label: "8",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.531952, 74.364212);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_9.png');
+		var marker = new google.maps.Marker({
+		label: "9",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.482753, 74.393768);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_10.png');
+		var marker = new google.maps.Marker({
+		label: "10",
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.467027, 74.266477);
+		var img = new google.maps.MarkerImage('/Users/sachchal/Desktop/incons/number_11.png');
+		var marker = new google.maps.Marker({
+		label: "11",
+		position: latlng
+		});
+		marker.setMap(map);
+
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
