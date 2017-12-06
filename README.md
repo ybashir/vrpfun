@@ -22,3 +22,10 @@ Shortest route is: [[0, 1, 7], [0, 3, 6, 4, 9], [0, 5, 10, 2, 8]]
 ```
 
 ![alt text](https://i.imgur.com/YYUcRBl.jpg)
+
+To try this out, clone the repo and install dependencies (ideally in a virtualenv):
+```pip install -r requirements.txt```
+
+Then supply the arguments on command line like this:
+
+```python solution.py "Macdonalds near Lahore" 3```
