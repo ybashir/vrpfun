@@ -1,4 +1,4 @@
-import itertools
+import itertools,sys
 from fetch import *
 from plot import draw_map
 
@@ -46,20 +46,19 @@ def shortest_route_with_partitions(loc_ids, partitions=1):
              key=lambda x: max(route_length(x[i]) for i in range(partitions)))
 
 if __name__ == '__main__':
-  search_query = "McDonalds near Lahore City"
+  search_query = sys.argv[1]
+  num_vehicles = int(sys.argv[2])
   locations = get_locations(search_query)
   location_ids = [l['Id'] for l in locations]
   distances = get_distances(locations, search_query)
   t0 = time.clock()
-  shortest_route = shortest_route_with_partitions(location_ids, 3)
+  shortest_route = shortest_route_with_partitions(location_ids, num_vehicles)
   paths = get_paths(locations,shortest_route)
 
   draw_map(locations, [], "input.html")
   draw_map(locations, paths, 'output.html')
 
   print('Time elapsed: {0:.2f} seconds'.format(time.clock() - t0))
-
   print('Shortest route time: {0:.1f} minutes'.
         format(max(route_length(i) for i in shortest_route)))
-
   print('Shortest route is: {0}'.format(shortest_route))
