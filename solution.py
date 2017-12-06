@@ -51,7 +51,7 @@ if __name__ == '__main__':
   location_ids = [l['Id'] for l in locations]
   distances = get_distances(locations, search_query)
   t0 = time.clock()
-  shortest_route = shortest_route_with_partitions(location_ids, 2)
+  shortest_route = shortest_route_with_partitions(location_ids, 3)
   paths = get_paths(locations,shortest_route)
 
   draw_map(locations, [], "input.html")

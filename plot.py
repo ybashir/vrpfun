@@ -25,11 +25,11 @@ class GoogleMapPlotterPlus(GoogleMapPlotter):
   def write_point(self, f, lat, lon, color, title):
     f.write('\t\tvar latlng = new google.maps.LatLng(%f, %f);\n' %
             (lat, lon))
-    if title =='1':
-      f.write('\t\tvar img = new google.maps.MarkerImage(\'https://image.ibb.co/cUXPSw/truck_catering.png\');\n')
+
+    f.write('\t\tvar img = new google.maps.MarkerImage(\'https://image.ibb.co/cUXPSw/truck_catering.png\');\n')
     f.write('\t\tvar marker = new google.maps.Marker({\n')
 
-    if title=='1':
+    if title=='0' or title == 0:
       f.write('\t\ticon: img,\n')
     else:
       f.write('\t\tlabel: "%s",\n' % title)
