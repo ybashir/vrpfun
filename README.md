@@ -11,7 +11,7 @@ The program takes a google maps search resulting in a list of locations and the 
 3. Vehicles come back to the depot
 4. The first location in the list of locations is the depot
 
-Here is a sample plot of the starting input locations with the truck icon showing the depot:
+Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
 ![alt text](https://i.imgur.com/Idm68JF.jpg)
 
