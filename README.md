@@ -25,12 +25,15 @@ Shortest route is: [[0, 1, 7], [0, 3, 6, 4, 9], [0, 5, 10, 2, 8]]
 ![alt text](https://i.imgur.com/YYUcRBl.jpg)
 
 To try this out, clone the repo and install dependencies (ideally in a virtualenv):
+
 ```pip install -r requirements.txt```
 
 Then supply the arguments on command line like this:
 
 ```python solution.py <search_query> <number_of_vehicles>```
+
 e.g.
+
 ```python solution.py "Sample Search" 3```
 
 After the first run, your input files will be automatically created and the results dont need to be fetched again.
