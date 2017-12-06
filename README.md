@@ -6,13 +6,12 @@ This repo is a pythonic implemetation of the brute-force solution to the VRP. VR
 
 However, the idea here is just to show how a few lines of python code can be used to solve hard problems.
 
-The code expects two input files, one with locations and their geo-coordinates and the other with distances between locations:
+The code expects two input files, one with locations and their geo-coordinates and the other with distances between locations. There are some simplistic assumptions:
 
-1. Vehicles have infinite capacity
-2. Each delivery location needs to be visited just once
-3. Vehicles come back to the depot
-4. The first location in the list of locations is the depot
-5. Distance from X to Y is the same as the distance from Y to X
+1. Each delivery location needs to be visited just once
+2. Vehicles come back to the depot
+3. The first location in the list of locations is the depot
+4. Distance from X to Y is the same as the distance from Y to X
 
 Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
