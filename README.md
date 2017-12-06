@@ -34,6 +34,6 @@ Then supply the arguments on command line like this:
 
 e.g.
 
-```python solution.py "Sample Search" 3```
+```python solution.py "Sample" 3```
 
 After the first run, your input files will be automatically created and the results dont need to be fetched again. You can add a depot location at the top of the created input file for locations.
