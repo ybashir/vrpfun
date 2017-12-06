@@ -2,14 +2,15 @@
 
 VRP is a generalized version of the Traveling Salesperson Problem.
 
-This is a brute-force solution to the VRP which finds an optimal route given a depot, a set of delivery locations and the number of vehicles starting from the depot.
+This is a brute-force solution to the VRP. Given a depot, a set of delivery locations and the number of vehicles starting from the depot, it tries to minimize the time required to visit all locations.
 
-The program takes a google maps search resulting in a list of locations and the number of vehicles as input and outputs optimal routes for those vehicles. There are a few simplistic assumptions:
+The code expects two input files, one with locations and their geo-coordinates and the other with distances between locations:
 
 1. Vehicles have infinite capacity
 2. Each delivery location needs to be visited just once
 3. Vehicles come back to the depot
 4. The first location in the list of locations is the depot
+5. Distance from X to Y is the same as the distance from Y to X
 
 Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
@@ -30,6 +31,6 @@ Then supply the arguments on command line like this:
 
 ```python solution.py <search_query> <number_of_vehicles>```
 e.g.
-```python solution.py "Macdonalds near Lahore" 3```
+```python solution.py "Sample Search" 3```
 
 After the first run, your input files will be automatically created and the results dont need to be fetched again.
