@@ -30,7 +30,15 @@ To try this out, clone the repo and install dependencies (ideally in a virtualen
 
 ```pip install -r requirements.txt```
 
-Then supply the arguments on command line like this:
+Update the settings file to include your own settings, especially these two:
+
+```
+GOOGLE_MAPS_KEY = 'Add you own google maps key here'
+LIMIT_LOCATIONS = 11
+```
+If you run the algorithm for more than 12 locations, be prepared to wait a very long time for the results :)
+
+Finally, supply  command line arguments and run the code like this:
 
 ```python solution.py <search_query> <number_of_vehicles>```
 
