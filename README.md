@@ -2,7 +2,9 @@
 
 VRP is a generalized version of the Traveling Salesperson Problem (TSP): Given a depot, a set of delivery locations and the number of vehicles starting from the depot, we need to minimize the time (or travel distance) required to visit all locations.
 
-This repo is a pythonic implemetation of the brute-force solution to the VRP. VRP is an NP-Hard problem to solve so the brute force obviously becomes very prohibitive very soon. However, the idea is to show how a few lines of python code can solve a really hard problem.
+This repo is a pythonic implemetation of the brute-force solution to the VRP. VRP is an NP-Hard problem so the brute force obviously becomes very prohibitive very quickly as the number of destinations or the number of vehicles is increased. 
+
+However, the idea here is just to show how a few lines of python code can be used to solve hard problems.
 
 The code expects two input files, one with locations and their geo-coordinates and the other with distances between locations:
 
