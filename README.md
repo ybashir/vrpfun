@@ -28,4 +28,8 @@ To try this out, clone the repo and install dependencies (ideally in a virtualen
 
 Then supply the arguments on command line like this:
 
+```python solution.py <search_query> <number_of_vehicles>```
+e.g.
 ```python solution.py "Macdonalds near Lahore" 3```
+
+After the first run, your input files will be automatically created and the results dont need to be fetched again.
