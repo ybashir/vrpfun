@@ -23,7 +23,7 @@ Shortest route time: 90.0 minutes
 Shortest route is: [[0, 1, 7], [0, 3, 6, 4, 9], [0, 5, 10, 2, 8]]
 ```
 
-![alt text](https://i.imgur.com/YYUcRBl.jpg)
+![alt text](https://i.imgur.com/HP2z99l.jpg)
 
 To try this out, clone the repo and install dependencies (ideally in a virtualenv):
 
