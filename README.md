@@ -15,7 +15,7 @@ The code expects two input files, one with locations and their geo-coordinates a
 
 Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
-![alt text](https://i.imgur.com/Idm68JF.jpg)
+![alt text](https://i.imgur.com/E3BV1Yl.jpg)
 
 Here is the output and plot created after the algorithm has been run with 3 vehicles as input:
 ```
