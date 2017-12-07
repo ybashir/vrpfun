@@ -5,8 +5,8 @@ from utils import *
 
 def get_locations(search_query):
   locations = []
+  filename = slugify(search_query)+'_locations.csv'
   try:
-    filename = slugify(search_query)+'_locations.csv'
     with open(filename,'r') as f:
       for row in csv.DictReader(f):
         row['Id'] = int(row['Id'])
@@ -18,8 +18,8 @@ def get_locations(search_query):
   return locations[:LIMIT_LOCATIONS]
 
 def get_distances(locations,search_query,track='duration'):
+  filename = slugify(search_query)+'_distances.csv'
   try:
-    filename = slugify(search_query)+'_distances.csv'
     with open(filename,'r') as f:
       distances = [[0]*MAX_LOCATIONS for _ in range(MAX_LOCATIONS)]
       for row in csv.DictReader(f):
@@ -67,7 +67,7 @@ def fetch_locations(search_query, filename='locations.csv'):
       time.sleep(2)
   return locations
 
-def fetch_distances(locations,filename='distances.csv',track='Duration'):
+def fetch_distances(locations,filename='distances.csv',track='duration'):
   distances = [[0]*MAX_LOCATIONS for _ in range(MAX_LOCATIONS)]
   with open(filename,'w') as file:
     file.write('start,end,distance,duration\n')
@@ -79,11 +79,11 @@ def fetch_distances(locations,filename='distances.csv',track='Duration'):
         time.sleep(1)
         dist = gmaps_client.distance_matrix(origins=stringify_latlong(l1),
                                             destinations=stringify_latlong(l2))
-        next_line = '{0},{1},{2:.2f},{3:.2f}'.format(i,j,
-                                            dist['rows'][0]['elements'][0]['distance']['value']/1000,
-                                            dist['rows'][0]['elements'][0]['duration']['value']/60,
-        )
-        distances[x][y] = distances[y][x] = dist['rows'][0]['elements'][0][track]['value']/{'duration':60,'distance':1000}[track]
+        distance = dist['rows'][0]['elements'][0]['distance']['value']/1000
+        duration = dist['rows'][0]['elements'][0]['duration']['value']/60
+        next_line = '{0},{1},{2:.2f},{3:.2f}'.format(i,j,distance,duration)
+        distances[x][y] = distances[y][x] = {'distance':distance,
+                                             'duration':duration}[track]
         print(next_line)
         file.write(next_line+'\n')
   return distances
