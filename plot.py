@@ -1,8 +1,8 @@
 import csv
 import polyline
-
+import settings
 from gmplot import GoogleMapPlotter
-key = 'AIzaSyD8n-hyKVeAKHx6D4OrsYPxKEF8ultGAmE'
+key = settings.GOOGLE_MAPS_KEY
 
 
 colors = [
@@ -25,15 +25,12 @@ class GoogleMapPlotterPlus(GoogleMapPlotter):
   def write_point(self, f, lat, lon, color, title):
     f.write('\t\tvar latlng = new google.maps.LatLng(%f, %f);\n' %
             (lat, lon))
-
     f.write('\t\tvar img = new google.maps.MarkerImage(\'https://image.ibb.co/cUXPSw/truck_catering.png\');\n')
     f.write('\t\tvar marker = new google.maps.Marker({\n')
-
     if title=='0' or title == 0:
       f.write('\t\ticon: img,\n')
     else:
       f.write('\t\tlabel: "%s",\n' % title)
-
     f.write('\t\tposition: latlng\n')
     f.write('\t\t});\n')
     f.write('\t\tmarker.setMap(map);\n')
@@ -41,8 +38,10 @@ class GoogleMapPlotterPlus(GoogleMapPlotter):
 
 
 lat,lng = GoogleMapPlotterPlus.geocode("Lahore")
-gmap = GoogleMapPlotterPlus(lat,lng,zoom=13,apikey=key)
-
+if lat and lng:
+  gmap = GoogleMapPlotterPlus(lat,lng,zoom=13,apikey=key)
+else:
+  print("Google maps call failed. Try again")
 
 def draw_locations(locations):
   global gmap

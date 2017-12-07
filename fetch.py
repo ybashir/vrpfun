@@ -47,11 +47,10 @@ def fetch_locations(search_query, filename='locations.csv'):
   with open(filename,'w', encoding='utf-8') as file:
     fieldnames = ['Id','Address','Lat','Lon']
     writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
     while True:
       results = gmaps_client.places(search_query,
                                     page_token=page_token)
-      if i == 0:
-        writer.writeheader()
       for r in results['results']:
         row = {
           'Id':i,
@@ -61,7 +60,6 @@ def fetch_locations(search_query, filename='locations.csv'):
         }
         locations.append(row)
         writer.writerow(row)
-
         i += 1
       if 'next_page_token' not in results:
         break
