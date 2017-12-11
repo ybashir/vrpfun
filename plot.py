@@ -21,6 +21,10 @@ colors = [
 ]
 
 class GoogleMapPlotterPlus(GoogleMapPlotter):
+  """
+  Slight variation on https://github.com/vgm64/gmplot
+  changes the image marker for the zeroeth location and adds labels to the others
+  """
 
   def write_point(self, f, lat, lon, color, title):
     f.write('\t\tvar latlng = new google.maps.LatLng(%f, %f);\n' %

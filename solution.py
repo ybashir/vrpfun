@@ -17,7 +17,9 @@ def all_routes(seq):
 
 def partition(collection):
   """Returns the set of all partitions for a given set
-    e.g for [1,2], it returns [[1],[2]] and [[1,2]]"""
+     e.g for [1,2], it returns [[1],[2]] and [[1,2]]
+     https://stackoverflow.com/questions/19368375/set-partitions-in-python
+  """
   if len(collection) == 1:
     yield [collection]
     return
