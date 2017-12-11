@@ -2,7 +2,7 @@
 
 VRP is a generalized version of the Traveling Salesperson Problem (TSP): Given a depot, a set of delivery locations and the number of vehicles starting from the depot, we need to minimize the time (or travel distance) required to visit all locations.
 
-This repo is a pythonic implemetation of the brute-force solution to the VRP. VRP is an NP-Hard problem so the brute force obviously becomes very prohibitive very quickly as the number of destinations is increased or the number of vehicles is reduced. 
+This repo is a pythonic implementation of the brute-force solution to the VRP. VRP is an NP-Hard problem so the brute force obviously becomes very prohibitive very quickly as the number of destinations is increased or the number of vehicles is reduced. 
 
 However, the idea here is just to show how a few lines of python code can be used to solve hard problems.
 
@@ -20,7 +20,7 @@ Here is a sample plot of the starting input locations resulting from search quer
 
 Here is the output and plot created after the algorithm has been run with 3 vehicles as input:
 ```
-Solution time: 69.06 seconds (with pypy which is roughly 6x faster than PythonC)
+Solution time: 69.06 seconds (with pypy which is roughly 6x faster than CPython)
 Shortest route time: 47.7 minutes
 Shortest route is: [[0, 5, 8], [0, 4, 11, 2, 10, 6], [0, 1, 9, 12, 7]]
 ```
@@ -39,7 +39,7 @@ LIMIT_LOCATIONS = 12
 ```
 If you run the algorithm for more than 12 locations, be prepared to wait a very long time for the results :)
 
-Finally, supply  command line arguments and run the code like this:
+Finally, supply command line arguments and run the code like this:
 
 ```python solution.py <search_query> <number_of_vehicles>```
 
