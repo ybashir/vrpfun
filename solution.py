@@ -9,7 +9,7 @@ def distance(x,y):
 
 def route_length(route):
   """Distance between first and last and consecutive elements of a list."""
-  return sum(distance(route[i],route[i - 1]) for i in range(len(route)))
+  return sum(distance(route[i],route[i - 1]) for i,v in enumerate(route))
 
 def all_routes(seq):
   """Return all permutations of a list, each starting with the first item"""
@@ -58,7 +58,7 @@ if __name__ == '__main__':
   draw_map(locations, [], "input.html")
   draw_map(locations, paths, 'output.html')
 
-  print('Time elapsed: {0:.2f} seconds'.format(time.clock() - t0))
+  print('Solution time: {0:.2f} seconds'.format(time.clock() - t0))
   print('Shortest route time: {0:.1f} minutes'.
         format(max(route_length(i) for i in shortest_route)))
   print('Shortest route is: {0}'.format(shortest_route))
