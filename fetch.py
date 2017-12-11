@@ -81,7 +81,7 @@ def fetch_distances(locations,filename='distances.csv',track='duration'):
                                             destinations=stringify_latlong(l2))
         distance = dist['rows'][0]['elements'][0]['distance']['value']/1000
         duration = dist['rows'][0]['elements'][0]['duration']['value']/60
-        next_line = '{0},{1},{2:.2f},{3:.2f}'.format(i,j,distance,duration)
+        next_line = '{0},{1},{2:.2f},{3:.2f}'.format(x,y,distance,duration)
         distances[x][y] = distances[y][x] = {'distance':distance,
                                              'duration':duration}[track]
         print(next_line)
