@@ -15,7 +15,8 @@ The code expects two input files, one with locations and their geo-coordinates a
 
 Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
-![alt text](https://i.imgur.com/E3BV1Yl.jpg)
+
+![alt text](https://i.imgur.com/82QgV4X.jpg)
 
 Here is the output and plot created after the algorithm has been run with 3 vehicles as input:
 ```
@@ -24,7 +25,7 @@ Shortest route time: 65.0 minutes
 Shortest route is: [[0, 4, 8, 9], [0, 7, 3, 10, 6], [0, 2, 11, 5]]
 ```
 
-![alt text](https://i.imgur.com/HP2z99l.jpg)
+![alt text](https://i.imgur.com/HnqfAFS.jpg)
 
 To try this out, clone the repo and install dependencies (ideally in a virtualenv):
 
