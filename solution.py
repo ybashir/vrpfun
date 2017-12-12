@@ -36,9 +36,8 @@ def shortest_route(routes):
 def all_short_routes_with_partitions(ids, partitions=1):
   """Our partitions represent number of vehicles. This function yields
      an optimal path for each vehicle given the destinations assigned to it"""
-  for p in partition(ids[1:]):
-    if len(p) == partitions:
-      yield [shortest_route(all_routes([ids[0]] + q)) for q in p]
+  for p in filter(lambda x: len(x) == partitions,partition(ids[1:])):
+    yield [shortest_route(all_routes([ids[0]] + q)) for q in p]
 
 def shortest_route_with_partitions(loc_ids, partitions=1):
   """This function receives all k-subsets of a route and returns the subset
