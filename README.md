@@ -16,7 +16,7 @@ The code expects two input files, one with locations and their geo-coordinates a
 Here is a sample plot of the starting input locations resulting from search query ```McDonalds near Lahore``` with the truck icon showing the depot:
 
 
-![alt text](https://i.imgur.com/82QgV4X.jpg)
+![alt text](https://i.imgur.com/1zQwMqA.jpg)
 
 Here is the output and plot created after the algorithm has been run with 3 vehicles as input:
 ```
@@ -25,26 +25,31 @@ Shortest route time: 47.7 minutes
 Shortest route is: [[0, 5, 8], [0, 4, 11, 2, 10, 6], [0, 1, 9, 12, 7]]
 ```
 
-![alt text](https://i.imgur.com/HnqfAFS.jpg)
+![alt text](https://i.imgur.com/HCBrhaS.jpg)
 
 To try this out, clone the repo and install dependencies (ideally in a virtualenv):
 
 ```pip install -r requirements.txt```
 
-Update the settings file to include your own settings, especially these two:
+Update the settings file to include your own settings, especially this:
 
 ```
 GOOGLE_MAPS_KEY = 'Add your own google maps key here'
-LIMIT_LOCATIONS = 12
 ```
-If you run the algorithm for more than 12 locations, be prepared to wait a very long time for the results :)
 
 Finally, supply command line arguments and run the code like this:
 
-```python solution.py <search_query> <number_of_vehicles>```
+```python solution.py <search_query> <number_of_vehicles> <location_limit>```
 
 e.g.
 
-```python solution.py "Sample" 3```
+```python solution.py "McDonalds in Lahore" 3 12```
 
-After the first run, your input files will be automatically created and the results dont need to be fetched again. You can add a depot location at the top of the created input file for locations.
+or
+
+```python solution.py "Sample" 3 12```
+
+If you run the algorithm for more than 12 locations, be prepared to wait a very long time for the results :)
+
+After the first run, your input files will be automatically created and the results dont need to be fetched again. 
+You can move the depot location to the top of the created input file for locations.

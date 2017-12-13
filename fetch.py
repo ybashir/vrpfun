@@ -15,7 +15,7 @@ def get_locations(search_query):
         locations.append(row)
   except IOError:
     locations = fetch_locations(search_query,filename)
-  return locations[:LIMIT_LOCATIONS]
+  return locations[:MAX_LOCATIONS]
 
 def get_distances(locations, search_query, track='duration'):
   filename = slugify(search_query) + '_distances.csv'
