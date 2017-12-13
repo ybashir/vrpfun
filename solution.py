@@ -4,12 +4,12 @@ from plot import draw_map
 
 distances = []
 
-def distance(x,y):
+def distance(x, y):
   return distances[x][y]
 
 def route_length(route):
   """Distance between first and last and consecutive elements of a list."""
-  return sum(distance(route[i],route[i - 1]) for i,v in enumerate(route))
+  return sum(distance(route[i], route[i - 1]) for i, v in enumerate(route))
 
 def all_routes(seq):
   """Return all permutations of a list, each starting with the first item"""
