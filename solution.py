@@ -33,17 +33,17 @@ def shortest_route(routes):
   """Given a list of routes returns the minimum based on route length"""
   return min(routes, key=route_length)
 
-def all_short_routes_with_partitions(ids, partitions=1):
+def all_short_partitions(ids, partitions=1):
   """Our partitions represent number of vehicles. This function yields
      an optimal path for each vehicle given the destinations assigned to it"""
   for p in filter(lambda x: len(x) == partitions,partition(ids[1:])):
-    yield [shortest_route(all_routes([ids[0]] + q)) for q in p]
+      yield [shortest_route(all_routes([ids[0]] + q)) for q in p]
 
-def shortest_route_with_partitions(loc_ids, partitions=1):
+def shortest_partition(loc_ids, partitions=1):
   """This function receives all k-subsets of a route and returns the subset
     with minimum distance cost. Note the total time is always equal to
     the max time taken by any single vehicle"""
-  return min(all_short_routes_with_partitions(loc_ids, partitions),
+  return min(all_short_partitions(loc_ids, partitions),
              key=lambda x: max(route_length(x[i]) for i in range(partitions)))
 
 if __name__ == '__main__':
@@ -53,13 +53,14 @@ if __name__ == '__main__':
   location_ids = [l['Id'] for l in locations]
   distances = get_distances(locations, search_query)
   t0 = time.clock()
-  shortest_route = shortest_route_with_partitions(location_ids, num_vehicles)
+  shortest_route = shortest_partition(location_ids, num_vehicles)
   paths = get_paths(locations,shortest_route)
 
   draw_map(locations, [], "input.html")
   draw_map(locations, paths, 'output.html')
 
-  print('Solution time: {0:.2f} seconds'.format(time.clock() - t0))
-  print('Shortest route time: {0:.1f} minutes'.
+  with open('output.txt','a') as file:
+    file.write('Solution time: {0:.2f} seconds\n'.format(time.clock() - t0))
+    file.write('Shortest route time: {0:.1f} minutes\n'.
         format(max(route_length(i) for i in shortest_route)))
-  print('Shortest route is: {0}'.format(shortest_route))
+    file.write('Shortest route is: {0}\n'.format(shortest_route))

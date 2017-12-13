@@ -20,7 +20,7 @@ Here is a sample plot of the starting input locations resulting from search quer
 
 Here is the output and plot created after the algorithm has been run with 3 vehicles as input:
 ```
-Solution time: 69.06 seconds (with pypy which is roughly 6x faster than CPython)
+Solution time: 69.06 seconds (with pypy which is roughly 6x faster than PythonC)
 Shortest route time: 47.7 minutes
 Shortest route is: [[0, 5, 8], [0, 4, 11, 2, 10, 6], [0, 1, 9, 12, 7]]
 ```
