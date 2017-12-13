@@ -1,5 +1,7 @@
 import csv
 import polyline
+import sys
+
 import settings
 from gmplot import GoogleMapPlotter
 key = settings.GOOGLE_MAPS_KEY
@@ -61,6 +63,7 @@ def draw_map(locations,paths,file):
   gmap.draw(file)
 
 if __name__ == '__main__':
-  with open('locations.csv','r') as file:
+  filename = sys.argv[1]
+  with open(filename,'r') as file:
     reader = csv.DictReader(file)
-    draw_map(reader,None,'input.html')
+    draw_map(reader,[],'input.html')
