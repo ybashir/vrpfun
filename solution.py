@@ -40,11 +40,11 @@ def k_partitions_with_shortest_routes(ids, k=1):
     yield [min(all_routes([ids[0]] + q), key=route_length) for q in p]
 
 
-def shortest_partition(loc_ids, k=3):
+def shortest_partition(ids, k=3):
   """This function receives all k-subsets of a route and returns the subset
     with minimum distance cost. Note the total time is always equal to
     the max time taken by any single vehicle"""
-  return min(k_partitions_with_shortest_routes(loc_ids, k),
+  return min(k_partitions_with_shortest_routes(ids, k),
              key=lambda x: max(route_length(x[i]) for i in range(k)))
 
 
