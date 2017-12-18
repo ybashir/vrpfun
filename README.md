@@ -51,5 +51,5 @@ or
 
 If you run the algorithm for more than 12 locations, be prepared to wait a very long time for the results :)
 
-After the first run, your input files will be automatically created and the results dont need to be fetched again. 
+After the first run, your input files will be automatically created and the locations dont need to be fetched again. 
 You can move the depot location to the top of the created input file for locations.
