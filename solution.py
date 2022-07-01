@@ -1,4 +1,5 @@
-import itertools, sys
+#!/usr/bin/python3
+import itertools, sys, time
 from fetch import *
 from plot import draw_map
 
@@ -55,7 +56,7 @@ if __name__ == '__main__':
   locations = get_locations(search_query)
   location_ids = [l['Id'] for l in locations[:limit_locations]]
   distances = get_distances(locations, search_query)
-  t0 = time.clock()
+  t0 = time.perf_counter()
   shortest_route = shortest_partition(location_ids, num_vehicles)
   paths = get_paths(locations, shortest_route)
 
@@ -63,7 +64,7 @@ if __name__ == '__main__':
   draw_map(locations, paths, 'output.html')
 
   with open('output.txt', 'a') as file:
-    file.write('Solution time: {0:.2f} seconds\n'.format(time.clock() - t0))
+    file.write('Solution time: {0:.2f} seconds\n'.format(time.perf_counter() - t0))
     file.write('Shortest route time: {0:.1f} minutes\n'.
                format(max(route_length(i) for i in shortest_route)))
     file.write('Shortest route is: {0}\n'.format(shortest_route))

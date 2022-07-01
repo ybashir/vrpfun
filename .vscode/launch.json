@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Draw Input",
+            "type": "python",
+            "request": "launch",
+            "program": "plot.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "sample_locations.csv",
+            ]
+        },
+        {
+            "name": "Solution",
+            "type": "python",
+            "request": "launch",
+            "program": "solution.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "McDonalds in Lahore",
+                "3",
+                "12"
+            ]
+        }
+    ]
+}
